@@ -3,12 +3,19 @@ using namespace std;
 #define ll long long int
 #define modulo 1000000007
 
+
 class Solution{
-    public:
-    int circularSubarraySum(int arr[], int num){
-        
+public:
+    //Function to find the days of buying and selling stock for max profit.
+    vector<vector<int> > stockBuySell(vector<int> A, int n){
+        vector<vector<int>> v;
+        int num=A[0];
+        int big=0;
+        int size=1;
+        for(int i)
     }
 };
+
 
 int main()
 {
