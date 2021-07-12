@@ -24,36 +24,60 @@ class Solution {
                 if(s[i]=='0') zeroCount++;
                 else{
                     if(zeroCount>0 && numCount==0) return false;
-                    numCount++;
+                    numCount*=10;
+                    numCount+=s[i]-'0';
                 }
             }
+            if(numCount<0 && numCount>255) return false;
             zeroCount=0;
             numCount=0;
             for(int i=arr[0]+1;i<arr[1];i++){
                 if(s[i]=='0') zeroCount++;
                 else{
                     if(zeroCount>0 && numCount==0) return false;
-                    numCount++;
+                    numCount*=10;
+                    numCount+=s[i]-'0';
                 }
             }
+            if(numCount<0 && numCount>255) return false;
             zeroCount=0;
             numCount=0;
             for(int i=arr[1]+1;i<arr[2];i++){
                 if(s[i]=='0') zeroCount++;
                 else{
                     if(zeroCount>0 && numCount==0) return false;
-                    numCount++;
+                    numCount*=10;
+                    numCount+=s[i]-'0';
                 }
             }
+            if(numCount<0 && numCount>255) return false;
             zeroCount=0;
             numCount=0;
             for(int i=arr[2]+1;i<s.length();i++){
                 if(s[i]=='0') zeroCount++;
                 else{
                     if(zeroCount>0 && numCount==0) return false;
-                    numCount++;
+                    numCount*=10;
+                    numCount+=s[i]-'0';
                 }
             }
+            if(numCount<0 && numCount>255) return false;int N = str.size();
+        vector<int> lastOccur(256, -1);
+        
+        int res = 0;
+        
+        int i = 0;
+        for(int j = 0; j < N; j++)
+        {
+            i = max(i, lastOccur[str[j]] + 1);
+            
+            res = max(res, j - i + 1);
+            
+            lastOccur[str[j]] = j;
+        }
+        
+        return res;
+            return true;
         }
 };
 
