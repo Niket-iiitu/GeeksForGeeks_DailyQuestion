@@ -32,3 +32,21 @@ int main()
     
     return 0;
 }
+
+double findMedian() {
+    int arr[n];
+    map<int, int>::iterator itr;
+    int i=0;
+    for(itr = m.begin();itr!=m.end();++itr){
+        for(int j=0;j<itr->second;j++){
+            arr[i]=itr->first;
+            i++;
+        }
+    }
+    if(n%2==1){
+        return arr[n/2];
+    }
+    else{
+        return ((double)arr[n/2] + (double)arr[n/2-1])/2;
+    }
+}
